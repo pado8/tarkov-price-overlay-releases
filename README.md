@@ -8,19 +8,31 @@
 
 ## 📥 다운로드
 
-**[👉 최신 버전 다운로드](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)**
+**[👉 최신 버전 (Releases)](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)**
 
-또는 [Releases 탭](https://github.com/pado8/tarkov-price-overlay-releases/releases)에서 원하는 버전 선택.
+각 릴리즈마다 두 가지 형태로 제공합니다:
+
+| 파일 | 크기 | 설치 방식 | 추천 |
+|------|------|------|------|
+| `..._x64-setup.exe` | ~310MB | NSIS 인스톨러 (시작메뉴/제어판 등록) | 일반 사용 |
+| `..._portable.zip` | ~450MB | ZIP 압축 풀고 바로 실행 (설치 X) | 베타 테스트 / 멀티 버전 / USB |
 
 ---
 
 ## 🛠️ 설치
 
-1. 위 링크에서 `Tarkov Price Overlay_x.y.z_x64-setup.exe` 다운로드
-2. **Windows SmartScreen 경고 시:**
-   `추가 정보` → `실행`
+### 방법 A: 인스톨러 (`setup.exe`)
+1. `Tarkov Price Overlay_x.y.z_x64-setup.exe` 다운로드
+2. **Windows SmartScreen 경고 시:** `추가 정보` → `실행`
    *(코드 사이닝 인증서가 없는 베타 빌드라 정상입니다)*
 3. 설치 완료 후 시작 메뉴에서 **Tarkov Price Overlay** 실행
+
+### 방법 B: 포터블 ZIP (`_portable.zip`)
+1. `Tarkov Price Overlay_x.y.z_portable.zip` 다운로드
+2. 원하는 폴더에 압축 풀기 (예: `D:\Programs\TarkovOverlay\`)
+3. 풀린 폴더 안의 **`Tarkov Price Overlay.exe`** 더블클릭
+4. 제거 시 폴더 통째로 삭제 — 레지스트리 흔적 없음
+5. **여러 버전을 동시에 설치 가능** (각 버전을 다른 폴더에 풀면 됨)
 
 ---
 
