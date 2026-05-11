@@ -138,8 +138,14 @@
 **Q. F2를 눌러도 아무 반응이 없어요.**
 A. 첫 실행 후 OCR 모델 다운로드 중일 수 있습니다 (최대 5분). 이후에도 안 되면 설정에서 단축키를 다시 등록해보세요. 다른 프로그램이 F2를 점유하면 충돌할 수 있으니 다른 키로 변경도 시도해보세요.
 
-**Q. 게임은 잘 되는데 타르코프 안에서만 F2가 안 먹어요. (전체화면 모드)**
-A. 타르코프 그래픽 설정에서 **"전체화면(Fullscreen)" → "테두리 없는 전체화면(Borderless Fullscreen)"** 으로 변경해주세요. Windows 표준 글로벌 단축키(`RegisterHotKey`) 방식이라 게임이 독점 전체화면일 때는 OS가 외부 입력을 차단합니다. 보더리스 모드는 성능 차이도 거의 없으면서 알트탭, 디스코드 오버레이 등도 같이 잘 동작해서 대부분 사용자가 추천하는 모드입니다.
+**Q. 바탕화면에선 F2 잘 되는데 타르코프 안에서만 무반응이에요.**
+A. 권한 차이 때문입니다. 타르코프는 BattlEye가 **관리자 권한**으로 실행시키는데, 본 앱은 일반 권한이라 Windows UIPI 정책에 의해 게임 포커스 상태에서 키 입력이 차단됩니다.
+
+**해결**: `tarkov-price-overlay.exe` 또는 바로가기 **우클릭 → "관리자 권한으로 실행"** 해주세요. 매번 누르기 귀찮으시면 바로가기 속성 → 호환성 → "관리자 권한으로 이 프로그램 실행" 체크해두면 더블클릭만으로 항상 관리자 권한으로 뜹니다.
+
+(메모리 후킹/저수준 키 후킹으로 우회 가능하지만 BattlEye 탐지 위험 때문에 안 합니다. 안전한 방식 유지하면서 작동시키려면 권한 맞춰주는 게 정답이에요.)
+
+추가로, 타르코프 그래픽 설정이 **독점 전체화면(Exclusive Fullscreen)** 일 경우는 그래픽 설정에서 **"테두리 없는 전체화면(Borderless Fullscreen)"** 으로도 바꿔주세요. 독점 전체화면은 OS 자체가 모든 외부 오버레이를 차단해서 어떤 도구도 동작 못 합니다.
 
 **Q. 인식이 잘 안 되거나 엉뚱한 아이템이 나와요.**
 A. 위 "캡처 영역" 부분 참조. 아이템 이름 텍스트만 캡처 박스 안에 들어오도록 X/Y 오프셋을 미세 조정하세요.
@@ -338,8 +344,12 @@ Turn everything off → minimal card showing just price. Turn everything on → 
 **Q. Nothing happens when I press F2.**
 A. The OCR model may still be downloading on first launch (up to 5 min). If it still fails, re-register the hotkey in Settings. Another program might be holding F2 — try a different key.
 
-**Q. F2 works on desktop but does nothing inside Tarkov (fullscreen).**
-A. Switch Tarkov's graphics setting from **"Fullscreen"** to **"Borderless Fullscreen"**. We use Windows' standard global hotkey (`RegisterHotKey`), which the OS blocks while a game holds exclusive fullscreen. Borderless has near-identical performance and lets alt-tab / Discord overlay / this app all work normally.
+**Q. F2 works on desktop but does nothing inside Tarkov.**
+A. Privilege mismatch. Tarkov runs as **administrator** (BattlEye requires it), but this app runs as a normal user. Windows UIPI (User Interface Privilege Isolation) blocks key delivery to lower-privilege processes while a higher-privilege window has focus.
+
+**Fix**: Right-click `tarkov-price-overlay.exe` (or its shortcut) → **"Run as administrator"**. To avoid clicking through this every launch, set the shortcut's Properties → Compatibility → "Run this program as an administrator".
+
+If you're in **Exclusive Fullscreen**, switch Tarkov's graphics setting to **"Borderless Fullscreen"** as well — exclusive fullscreen blocks every overlay tool at the OS level, regardless of privilege.
 
 **Q. Wrong item name or "no match" result.**
 A. See "capture region" above. Tune X/Y offset so only the item name is inside the capture box.
