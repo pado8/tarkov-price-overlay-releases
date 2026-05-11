@@ -138,6 +138,9 @@
 **Q. F2를 눌러도 아무 반응이 없어요.**
 A. 첫 실행 후 OCR 모델 다운로드 중일 수 있습니다 (최대 5분). 이후에도 안 되면 설정에서 단축키를 다시 등록해보세요. 다른 프로그램이 F2를 점유하면 충돌할 수 있으니 다른 키로 변경도 시도해보세요.
 
+**Q. 게임은 잘 되는데 타르코프 안에서만 F2가 안 먹어요. (전체화면 모드)**
+A. 타르코프 그래픽 설정에서 **"전체화면(Fullscreen)" → "테두리 없는 전체화면(Borderless Fullscreen)"** 으로 변경해주세요. Windows 표준 글로벌 단축키(`RegisterHotKey`) 방식이라 게임이 독점 전체화면일 때는 OS가 외부 입력을 차단합니다. 보더리스 모드는 성능 차이도 거의 없으면서 알트탭, 디스코드 오버레이 등도 같이 잘 동작해서 대부분 사용자가 추천하는 모드입니다.
+
 **Q. 인식이 잘 안 되거나 엉뚱한 아이템이 나와요.**
 A. 위 "캡처 영역" 부분 참조. 아이템 이름 텍스트만 캡처 박스 안에 들어오도록 X/Y 오프셋을 미세 조정하세요.
 
@@ -334,6 +337,9 @@ Turn everything off → minimal card showing just price. Turn everything on → 
 
 **Q. Nothing happens when I press F2.**
 A. The OCR model may still be downloading on first launch (up to 5 min). If it still fails, re-register the hotkey in Settings. Another program might be holding F2 — try a different key.
+
+**Q. F2 works on desktop but does nothing inside Tarkov (fullscreen).**
+A. Switch Tarkov's graphics setting from **"Fullscreen"** to **"Borderless Fullscreen"**. We use Windows' standard global hotkey (`RegisterHotKey`), which the OS blocks while a game holds exclusive fullscreen. Borderless has near-identical performance and lets alt-tab / Discord overlay / this app all work normally.
 
 **Q. Wrong item name or "no match" result.**
 A. See "capture region" above. Tune X/Y offset so only the item name is inside the capture box.
