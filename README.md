@@ -114,6 +114,16 @@
 
 "무기 거치대 Lv1 ×1", "창고 Lv2 ×1" 같이 시설명 + 레벨 + 필요 개수를 한 줄로. 보관함에 모셔둘지 팔지 결정에 도움.
 
+### 3-3. 퀘스트 자동 동기화 — 본인 진행 상황 즉시 인식
+
+EFT 게임 로그를 직접 파싱해서 본인이 어떤 퀘스트를 완료/진행 중인지 시세 카드의 퀘스트 패널에 자동 표시.
+
+![퀘스트 트래커](assets/screenshots/06-quest.png)
+
+- ✓ 완료 (회색) / ▶ 진행중 (골드) / 미시작 (일반) 3단계 색상 구분
+- 외부 API/토큰 불필요 — 파일 읽기만 사용 (안전)
+- 설정 → 퀘스트 동기화에서 EFT 설치 경로 + 표시 모드 변경 가능
+
 ### 4. 인식이 잘 안 될 때
 
 설정의 **캡처 영역** 항목에서 X/Y 오프셋과 너비/높이를 조정 — 아이템 이름 텍스트가 캡처 영역 안에 들어오도록 맞추면 됩니다.
@@ -197,6 +207,7 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 ## 📜 업데이트 내역 (요약)
 
+- **v1.0.8** — QHD/4K 해상도 자동 스케일링 + 캡처 영역 **라이브 미리보기** (빨간/노란 박스가 커서 따라다님) + 슬라이더 + 텍스트 편집 UI + 설정 패널 드래그 리사이즈 + 정크 OCR 빠른 차단 (2분 멈춤 → 1초 내) + 디자인 토큰 통일 (회색 톤 가독성 ↑, 한글 폰트 명시)
 - **v1.0.7** — 탄약 매트릭스 패널(무기/탄약 캡처 시 같은 구경 비교표 자동 표시) + 땅바닥 아이템 캡처 fallback + shortName 영문 약자 매칭 + 루팅 등급 D/C/B/A/S 뱃지 + 1×1 아이템도 칸성비/등급 표시 + 관리자 권한 경고 배너
 - **v1.0.6** — 퀘스트 트래커 라이브 EFT(BSG 런처) 인식 픽스 + 시세 카드에 "하이드아웃 업그레이드 재료" 패널 추가 (어떤 시설 Lv N에 몇 개 필요한지)
 - **v1.0.5** — 퀘스트 자동 동기화 (EFT 게임 로그 직접 파싱) + 포터블 README 인코딩 픽스 + 전체화면 FAQ 보강
@@ -344,16 +355,33 @@ The lookup card auto-shows which hideout stations require this item for their le
 
 Each line shows station + level + required count (e.g. "Weapon rack Lv1 ×1"). Helps decide whether to stash or sell.
 
+### 3-3. Quest auto-sync — instant in-game progress detection
+
+The card's quest panel auto-marks which quests you've already completed / are currently progressing by parsing EFT's game logs directly.
+
+![Quest tracker](assets/screenshots/06-quest.png)
+
+- ✓ completed (grey) · ▶ in progress (gold) · not started (default) — three-tier color
+- No external API or token required — only reads local files
+- Settings → Quest sync to point at your EFT install or change display mode
+
 ### 4. If recognition is off
 
 Adjust the **capture region** in settings — make sure only the item name text falls inside the capture box.
 
-| Setting | Default | Meaning |
+**New in v1.0.8:**
+- 🔴 red box (primary) + 🟡 yellow box (ground) follow your cursor as a **live preview** on top of the game
+- Sliders + click-to-type numbers for offsets and sizes
+- "Auto-scale to monitor" button — one-click QHD/4K correction
+
+| Setting | Default (1080p) | Meaning |
 |---|---|---|
 | X offset | `10` | Horizontal start from cursor (px) |
 | Y offset | `-75` | Vertical start from cursor (px) |
 | Width | `300` | Capture area width |
 | Height | `70` | Capture area height |
+
+> QHD/4K users get auto-scaled defaults on first launch. If they don't fit, hit Settings → Capture region → Edit → "Auto-scale to monitor".
 
 ### 5. Move the overlay
 
@@ -425,6 +453,7 @@ A. Open a [GitHub Issue](https://github.com/pado8/tarkov-price-overlay-releases/
 
 ## 📜 Changelog (recent)
 
+- **v1.0.8** — QHD/4K auto-scaling on first launch + **live preview rectangles** (red/yellow boxes follow cursor) for the capture-region editor + slider-with-text fields + drag-resizable settings panel + fast junk-OCR rejection (2-minute hang → instant empty) + design-token cleanup (brighter greys for transparent-mode readability, explicit Korean font fallback)
 - **v1.0.7** — Ammo matrix panel (auto-compare table on weapon/ammo lookup) + ground item capture fallback + shortName alias matching + loot tier D/C/B/A/S badge + 1×1 items show ₽/slot and tier + admin elevation warning banner
 - **v1.0.6** — Tracker now recognizes live EFT (BSG launcher) install layout. New "Hideout upgrade requirements" panel on the lookup card.
 - **v1.0.5** — Quest auto-sync via EFT log parsing. Portable README encoding fix. Fullscreen FAQ.
