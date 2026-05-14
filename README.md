@@ -1,8 +1,15 @@
 # Tarkov Price Overlay
 
-> **타르코프에서 마우스 올리고 F2** — 플리 시세 · 상인가 · 바터 · 제작 · 퀘스트 정보를 게임 위에 바로 띄워주는 무료 Windows 오버레이 앱
+> **타르코프에서 마우스 올리고 F2** — 플리 시세 · 상인가 · 바터 · 제작 · 퀘스트 정보를 게임 위에 바로 띄워주는 **오픈소스 무료** Windows 오버레이 앱
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pado8/tarkov-price-overlay/blob/master/LICENSE)
+[![Open Source](https://img.shields.io/badge/Open-Source-brightgreen)](https://github.com/pado8/tarkov-price-overlay)
+[![Built on tarkov.dev](https://img.shields.io/badge/Built%20on-tarkov.dev-c8aa64)](https://tarkov.dev)
 
 **[⬇ 최신 버전 다운로드](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)** · 한국어 / English
+
+> 🔓 **소스코드 공개**: [pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay) (MIT 라이선스)
+> ⚠️ **공식 다운로드는 이 페이지 한 곳뿐**입니다. 다른 곳의 다운로드 파일은 진위가 확인되지 않으니 주의하세요.
 
 ---
 
@@ -51,12 +58,19 @@
 
 타르코프 커뮤니티에서 가장 걱정하는 부분이라 정직하게 적습니다.
 
+### 🔓 코드 100% 공개 (오픈소스)
+- 전체 소스: [github.com/pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay)
+- MIT 라이선스 — 누구나 검토 · 빌드 · 포크 가능
+- "메모리 안 읽음, 인젝션 없음, 텔레메트리 없음"을 **코드로 직접 확인**할 수 있습니다
+
+### 동작 방식
 이 프로그램은 **화면 캡처 + 글자 인식(OCR)** 만 사용합니다.
 
 - ❌ 게임 프로세스 메모리 읽기/쓰기 **안 함**
 - ❌ DLL 인젝션 **안 함**
 - ❌ 게임 윈도우 후킹 / 키보드 저수준 후킹 **안 함**
 - ❌ 게임 파일 수정 **안 함**
+- ❌ 외부 서버로 데이터 전송 / 텔레메트리 **안 함** (시세 데이터는 tarkov.dev API 한 방향만)
 - ✅ 일반 Win32 데스크탑 캡처(BitBlt) + 화면 위에 겹치는 투명 윈도우 + `RegisterHotKey`(OS 표준 단축키)
 
 기술적으로는 **유튜브 녹화 프로그램이나 디스코드 화면 공유와 같은 카테고리**입니다. 메모리 핵 · ESP · 에임봇과는 완전히 다릅니다.
@@ -241,9 +255,15 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 # Tarkov Price Overlay — English Guide
 
-> **Hover an item in Tarkov, press F2** — instantly see flea market prices, trader prices, barters, crafts, and quest requirements as a transparent overlay on top of the game.
+> **Hover an item in Tarkov, press F2** — a free, **open-source** Windows overlay that shows flea market prices, trader prices, barters, crafts, and quest requirements on top of the game.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pado8/tarkov-price-overlay/blob/master/LICENSE)
+[![Open Source](https://img.shields.io/badge/Open-Source-brightgreen)](https://github.com/pado8/tarkov-price-overlay)
 
 **[⬇ Download Latest](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)** · Free · Windows
+
+> 🔓 **Source code is fully open**: [pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay) (MIT license)
+> ⚠️ **This Releases page is the only official download.** Files hosted elsewhere have not been verified — please don't run those.
 
 ---
 
@@ -292,12 +312,19 @@ Flea current/24h range/last trade · top trader price · barters (both direction
 
 The biggest concern in the Tarkov community, so to be straight with you:
 
+### 🔓 Source code is 100% open
+- Full source: [github.com/pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay)
+- MIT license — anyone can audit, build, or fork
+- "No memory access, no injection, no telemetry" is **verifiable from the code itself**
+
+### How it works
 This program uses **screen capture + OCR (text recognition) only**.
 
 - ❌ Does **NOT** read/write game process memory
 - ❌ Does **NOT** inject DLLs
 - ❌ Does **NOT** hook the game window or use low-level keyboard hooks
 - ❌ Does **NOT** modify any game files
+- ❌ Does **NOT** send any data to external servers / telemetry (price queries hit tarkov.dev API only)
 - ✅ Uses standard Win32 desktop capture (BitBlt) + a transparent topmost window + `RegisterHotKey` (OS-level hotkey)
 
 Technically this is **the same category as YouTube screen recorders or Discord screen sharing**. It is fundamentally different from memory hacks, ESP, or aimbots.
