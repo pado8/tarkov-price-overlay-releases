@@ -61,7 +61,7 @@
 ### 🔓 코드 100% 공개 (오픈소스)
 - 전체 소스: [github.com/pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay)
 - MIT 라이선스 — 누구나 검토 · 빌드 · 포크 가능
-- "메모리 안 읽음, 인젝션 없음, 텔레메트리 없음"을 **코드로 직접 확인**할 수 있습니다
+- "메모리 안 읽음, 인젝션 없음"과 익명 통계가 정확히 무엇을 보내는지를 **코드로 직접 확인**할 수 있습니다
 
 ### 동작 방식
 이 프로그램은 **화면 캡처 + 글자 인식(OCR)** 만 사용합니다.
@@ -70,12 +70,22 @@
 - ❌ DLL 인젝션 **안 함**
 - ❌ 게임 윈도우 후킹 / 키보드 저수준 후킹 **안 함**
 - ❌ 게임 파일 수정 **안 함**
-- ❌ 외부 서버로 데이터 전송 / 텔레메트리 **안 함** (시세 데이터는 tarkov.dev API 한 방향만)
+- ❌ 검색 내용·화면·개인정보·IP 전송 **안 함**
 - ✅ 일반 Win32 데스크탑 캡처(BitBlt) + 화면 위에 겹치는 투명 윈도우 + `RegisterHotKey`(OS 표준 단축키)
+- ✅ 시세 데이터는 tarkov.dev 공개 API 사용 / 익명 사용 통계는 **선택적**(아래 개인정보 항목, 설정에서 끄기 가능)
 
 기술적으로는 **유튜브 녹화 프로그램이나 디스코드 화면 공유와 같은 카테고리**입니다. 메모리 핵 · ESP · 에임봇과는 완전히 다릅니다.
 
 다만 **BSG/BattlEye가 명시적으로 허용한 도구는 아닙니다.** 정책은 언제든 바뀔 수 있으므로 사용에 따른 책임은 본인에게 있습니다. 현재까지 동일한 방식의 오버레이 도구로 밴된 사례는 보고된 바 없으나, 100% 보장은 누구도 할 수 없습니다.
+
+### 🔏 개인정보 / 수집 데이터
+앱 개선과 사용 규모 파악을 위해 **익명 사용 통계**만 수집합니다.
+
+- ✅ 수집: 앱 실행 횟수, F2 사용 횟수, 앱 버전, 국가 코드, 익명 설치 ID(무작위 UUID, 재설치 시 변경)
+- ✅ 조회 실패/시세 없음 시: 매칭된 **공개 아이템 ID**(검색어·OCR 텍스트 아님 — 패치 후 신규 아이템 자동 감지용)
+- ❌ 절대 수집 안 함: 검색한 아이템 이름, 화면 캡처, 마우스 좌표, 게임 내용, 개인정보, IP 주소
+- ⚙️ 설정에서 **언제든 끌 수 있습니다.** 첫 실행 시 안내가 한 번 표시됩니다.
+- 🔓 오픈소스이므로 수집 코드(`reportEvent`)를 직접 확인할 수 있습니다.
 
 ---
 
@@ -221,6 +231,9 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 ## 📜 업데이트 내역 (요약)
 
+- **v1.1.0** — **인앱 피드백** (앱에서 바로 전송, 스크린샷 첨부 가능) + **카드 크기 드래그 조절** (모서리로 너비·높이 통합) + **거래 불가 아이템 명확 표시** (신규 퀘스트 키카드 등, Icebreaker 신규 아이템 대응) + **땅바닥 아이템 인식 정확도 개선** + **신규 탄약 caliber 자동 대응** + 후원 안내 개선 + 익명 사용 통계(opt-out, 끄기 가능)
+- **v1.0.11** — 캡처 영역 설정 모달화 + 듀얼 모니터 복구 + OCR 정확도 강화 + 탄박스 매트릭스 + Icebreaker caliber
+- **v1.0.10** — 자동 업데이트 + 은신처 레벨 설정 + 퀘스트 PVP/PVE 분리
 - **v1.0.9** — 인스톨러가 실행 중인 오버레이를 자동 종료(업데이트 시 충돌 없음) + **게임 언어 분리 설정** (UI는 한국어인데 영문판 게임 하시는 분들을 위해 게임 클라이언트 언어를 따로 지정 가능) + 퀘스트 동기화 라벨 명확화
 - **v1.0.8** — QHD/4K 해상도 자동 스케일링 + 캡처 영역 **라이브 미리보기** (빨간/노란 박스가 커서 따라다님) + 슬라이더 + 텍스트 편집 UI + 설정 패널 드래그 리사이즈 + 정크 OCR 빠른 차단 (2분 멈춤 → 1초 내) + 디자인 토큰 통일 (회색 톤 가독성 ↑, 한글 폰트 명시)
 - **v1.0.7** — 탄약 매트릭스 패널(무기/탄약 캡처 시 같은 구경 비교표 자동 표시) + 땅바닥 아이템 캡처 fallback + shortName 영문 약자 매칭 + 루팅 등급 D/C/B/A/S 뱃지 + 1×1 아이템도 칸성비/등급 표시 + 관리자 권한 경고 배너
@@ -316,7 +329,7 @@ The biggest concern in the Tarkov community, so to be straight with you:
 ### 🔓 Source code is 100% open
 - Full source: [github.com/pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay)
 - MIT license — anyone can audit, build, or fork
-- "No memory access, no injection, no telemetry" is **verifiable from the code itself**
+- "No memory access, no injection" — and exactly what the anonymous stats send — is **verifiable from the code itself**
 
 ### How it works
 This program uses **screen capture + OCR (text recognition) only**.
@@ -325,12 +338,22 @@ This program uses **screen capture + OCR (text recognition) only**.
 - ❌ Does **NOT** inject DLLs
 - ❌ Does **NOT** hook the game window or use low-level keyboard hooks
 - ❌ Does **NOT** modify any game files
-- ❌ Does **NOT** send any data to external servers / telemetry (price queries hit tarkov.dev API only)
+- ❌ Does **NOT** send search content, screen captures, personal info, or your IP
 - ✅ Uses standard Win32 desktop capture (BitBlt) + a transparent topmost window + `RegisterHotKey` (OS-level hotkey)
+- ✅ Price data uses the public tarkov.dev API / anonymous usage stats are **optional** (see Privacy below, off-able in settings)
 
 Technically this is **the same category as YouTube screen recorders or Discord screen sharing**. It is fundamentally different from memory hacks, ESP, or aimbots.
 
 That said, **this tool is not officially sanctioned by BSG/BattlEye**. Their policy can change, so use is at your own risk. No bans have been reported for similar OCR-based overlay tools to date, but no one can guarantee 100% safety.
+
+### 🔏 Privacy / data collected
+Only **anonymous usage stats** are collected, to gauge usage and improve the app.
+
+- ✅ Collected: app launch count, F2 lookup count, app version, country code, anonymous install ID (random UUID, changes on reinstall)
+- ✅ On a failed/priceless lookup: the matched **public item id** (never the search text or OCR output — used to auto-detect new post-patch items)
+- ❌ Never collected: searched item names, screen captures, cursor positions, in-game content, personal info, IP address
+- ⚙️ You can **turn it off anytime** in Settings. A one-time notice is shown on first launch.
+- 🔓 Being open source, you can inspect the collection code (`reportEvent`) yourself.
 
 ---
 
@@ -481,6 +504,9 @@ A. Open a [GitHub Issue](https://github.com/pado8/tarkov-price-overlay-releases/
 
 ## 📜 Changelog (recent)
 
+- **v1.1.0** — **In-app feedback** (send straight from the app, attach a screenshot) + **drag-resize the card** (one bottom-right handle for width/height incl. the settings panel) + **clear "untradeable" label** for items with no flea/trader price (new quest keycards etc. — Icebreaker item support) + **better ground-loot recognition** + **auto-handles new ammo calibers** + improved donation prompt + anonymous usage stats (opt-out, toggle off in settings)
+- **v1.0.11** — Capture-region modal + dual-monitor recovery + OCR robustness + ammo-box matrix + Icebreaker calibers
+- **v1.0.10** — Auto-update + hideout level settings + quest PVP/PVE split
 - **v1.0.9** — Installer now auto-closes the running overlay before install/upgrade (no more half-uninstalled state). New **Game language** setting separate from UI language — for players running an English EFT client with a Korean UI (or vice versa). Quest-sync label clarified.
 - **v1.0.8** — QHD/4K auto-scaling on first launch + **live preview rectangles** (red/yellow boxes follow cursor) for the capture-region editor + slider-with-text fields + drag-resizable settings panel + fast junk-OCR rejection (2-minute hang → instant empty) + design-token cleanup (brighter greys for transparent-mode readability, explicit Korean font fallback)
 - **v1.0.7** — Ammo matrix panel (auto-compare table on weapon/ammo lookup) + ground item capture fallback + shortName alias matching + loot tier D/C/B/A/S badge + 1×1 items show ₽/slot and tier + admin elevation warning banner
