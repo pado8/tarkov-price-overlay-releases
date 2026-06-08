@@ -81,8 +81,8 @@
 ### 🔏 개인정보 / 수집 데이터
 앱 개선과 사용 규모 파악을 위해 **익명 사용 통계**만 수집합니다.
 
-- ✅ 수집: 앱 실행 횟수, F2 사용 횟수, 앱 버전, 국가 코드, 익명 설치 ID(무작위 UUID, 재설치 시 변경)
-- ✅ 조회 실패/시세 없음 시: 매칭된 **공개 아이템 ID**(검색어·OCR 텍스트 아님 — 패치 후 신규 아이템 자동 감지용)
+- ✅ 수집: 앱 실행 횟수, F2 사용 횟수, 앱 버전, 국가 코드, 익명 설치 ID(무작위 UUID, 재설치 시 변경), 관리자 권한 실행 여부
+- ✅ 조회 실패/시세 없음 시: 매칭된 **공개 아이템 ID** + 인식 실패 유형(empty/junk/no_match 카테고리) — **검색어·OCR 텍스트는 절대 아님**, 패치 후 신규 아이템/실패 원인 자동 감지용
 - ❌ 절대 수집 안 함: 검색한 아이템 이름, 화면 캡처, 마우스 좌표, 게임 내용, 개인정보, IP 주소
 - ⚙️ 설정에서 **언제든 끌 수 있습니다.** 첫 실행 시 안내가 한 번 표시됩니다.
 - 🔓 오픈소스이므로 수집 코드(`reportEvent`)를 직접 확인할 수 있습니다.
@@ -231,6 +231,7 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 ## 📜 업데이트 내역 (요약)
 
+- **v1.1.1** — **중복 실행 방지** (이미 켜져 있으면 새 창 안 띄우고 기존 창을 띄움 — 트레이 아이콘 안 쌓임) + **게임에서 F2 안 먹힐 때 '🔑 관리자로 재실행' 버튼** (타르코프가 관리자 권한이라 생기던 단축키 차단을 원클릭 해결) + **업데이트 진행 안내 개선** (업데이트 시 "프로그램 종료 후 셋업 다운로드" 팝업으로 "멈춘 건지" 헷갈림 해소) + **서버 공지** (앱 재배포 없이 인앱 공지) + 익명 통계에 권한·인식실패 유형 추가
 - **v1.1.0** — **인앱 피드백** (앱에서 바로 전송, 스크린샷 첨부 가능) + **카드 크기 드래그 조절** (모서리로 너비·높이 통합) + **거래 불가 아이템 명확 표시** (신규 퀘스트 키카드 등, Icebreaker 신규 아이템 대응) + **땅바닥 아이템 인식 정확도 개선** + **신규 탄약 caliber 자동 대응** + 후원 안내 개선 + 익명 사용 통계(opt-out, 끄기 가능)
 - **v1.0.11** — 캡처 영역 설정 모달화 + 듀얼 모니터 복구 + OCR 정확도 강화 + 탄박스 매트릭스 + Icebreaker caliber
 - **v1.0.10** — 자동 업데이트 + 은신처 레벨 설정 + 퀘스트 PVP/PVE 분리
@@ -349,8 +350,8 @@ That said, **this tool is not officially sanctioned by BSG/BattlEye**. Their pol
 ### 🔏 Privacy / data collected
 Only **anonymous usage stats** are collected, to gauge usage and improve the app.
 
-- ✅ Collected: app launch count, F2 lookup count, app version, country code, anonymous install ID (random UUID, changes on reinstall)
-- ✅ On a failed/priceless lookup: the matched **public item id** (never the search text or OCR output — used to auto-detect new post-patch items)
+- ✅ Collected: app launch count, F2 lookup count, app version, country code, anonymous install ID (random UUID, changes on reinstall), whether the app runs elevated (admin)
+- ✅ On a failed/priceless lookup: the matched **public item id** + a failure category (empty/junk/no_match) — **never the search text or OCR output**, used to auto-detect new post-patch items and diagnose miss causes
 - ❌ Never collected: searched item names, screen captures, cursor positions, in-game content, personal info, IP address
 - ⚙️ You can **turn it off anytime** in Settings. A one-time notice is shown on first launch.
 - 🔓 Being open source, you can inspect the collection code (`reportEvent`) yourself.
@@ -504,6 +505,7 @@ A. Open a [GitHub Issue](https://github.com/pado8/tarkov-price-overlay-releases/
 
 ## 📜 Changelog (recent)
 
+- **v1.1.1** — **single-instance** (relaunching surfaces the existing window — no more stacked tray icons) + **"🔑 Relaunch as admin" button** when F2 won't fire in-game (one-click fix for the Tarkov-runs-elevated mismatch) + **clearer update flow** (a popup explains the app closes and the installer downloads — no more "is it stuck?") + **server-driven announcements** (in-app notices without an app update) + anonymous stats now include elevation + lookup-failure category
 - **v1.1.0** — **In-app feedback** (send straight from the app, attach a screenshot) + **drag-resize the card** (one bottom-right handle for width/height incl. the settings panel) + **clear "untradeable" label** for items with no flea/trader price (new quest keycards etc. — Icebreaker item support) + **better ground-loot recognition** + **auto-handles new ammo calibers** + improved donation prompt + anonymous usage stats (opt-out, toggle off in settings)
 - **v1.0.11** — Capture-region modal + dual-monitor recovery + OCR robustness + ammo-box matrix + Icebreaker calibers
 - **v1.0.10** — Auto-update + hideout level settings + quest PVP/PVE split
