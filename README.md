@@ -231,6 +231,7 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 ## 📜 업데이트 내역 (요약)
 
+- **v1.1.2** — **창 고정 📌** (오버레이 위치 잠금 — 레이드 중 실수로 안 끌리게) + **자동 숨김 토글** (카드 항상 표시 가능) + **배경만 투명** (글자는 선명하게, 배경 투명도만 조절) + **하이드아웃 FiR 뱃지** (재료의 '레이드에서 발견' 필요 여부 표시) + **설치 용량 절반** (포터블은 기존 폴더 지우고 새로 풀기 권장!) + **조회 안정성 강화** (캡처 빗나가면 자동 확대 재시도, "Failed to fetch" 자동 재시도, 0↔O 같은 OCR 혼동 글자 정밀 매칭, F2 연타 중복 제거) + 로컬 API 보안 강화 + 영어 UI 마우스 단축키 표기 수정
 - **v1.1.1** — **중복 실행 방지** (이미 켜져 있으면 새 창 안 띄우고 기존 창을 띄움 — 트레이 아이콘 안 쌓임) + **게임에서 F2 안 먹힐 때 '🔑 관리자로 재실행' 버튼** (타르코프가 관리자 권한이라 생기던 단축키 차단을 원클릭 해결) + **업데이트 진행 안내 개선** (업데이트 시 "프로그램 종료 후 셋업 다운로드" 팝업으로 "멈춘 건지" 헷갈림 해소) + **서버 공지** (앱 재배포 없이 인앱 공지) + 익명 통계에 권한·인식실패 유형 추가
 - **v1.1.0** — **인앱 피드백** (앱에서 바로 전송, 스크린샷 첨부 가능) + **카드 크기 드래그 조절** (모서리로 너비·높이 통합) + **거래 불가 아이템 명확 표시** (신규 퀘스트 키카드 등, Icebreaker 신규 아이템 대응) + **땅바닥 아이템 인식 정확도 개선** + **신규 탄약 caliber 자동 대응** + 후원 안내 개선 + 익명 사용 통계(opt-out, 끄기 가능)
 - **v1.0.11** — 캡처 영역 설정 모달화 + 듀얼 모니터 복구 + OCR 정확도 강화 + 탄박스 매트릭스 + Icebreaker caliber
@@ -505,6 +506,7 @@ A. Open a [GitHub Issue](https://github.com/pado8/tarkov-price-overlay-releases/
 
 ## 📜 Changelog (recent)
 
+- **v1.1.2** — **Pin window 📌** (lock the overlay position so it can't be dragged mid-raid) + **auto-hide toggle** (keep the card always visible) + **background-only transparency** (text stays crisp) + **hideout FiR badges** (which materials must be Found in Raid) + **install size cut roughly in half** (portable users: delete the old folder, extract fresh!) + **more reliable lookups** (wider auto-retry on missed captures, "Failed to fetch" auto-retry, OCR mix-up matching like 0/O & 5/S, no duplicate OCR on rapid F2) + hardened local API + EN-UI mouse hotkey label fix
 - **v1.1.1** — **single-instance** (relaunching surfaces the existing window — no more stacked tray icons) + **"🔑 Relaunch as admin" button** when F2 won't fire in-game (one-click fix for the Tarkov-runs-elevated mismatch) + **clearer update flow** (a popup explains the app closes and the installer downloads — no more "is it stuck?") + **server-driven announcements** (in-app notices without an app update) + anonymous stats now include elevation + lookup-failure category
 - **v1.1.0** — **In-app feedback** (send straight from the app, attach a screenshot) + **drag-resize the card** (one bottom-right handle for width/height incl. the settings panel) + **clear "untradeable" label** for items with no flea/trader price (new quest keycards etc. — Icebreaker item support) + **better ground-loot recognition** + **auto-handles new ammo calibers** + improved donation prompt + anonymous usage stats (opt-out, toggle off in settings)
 - **v1.0.11** — Capture-region modal + dual-monitor recovery + OCR robustness + ammo-box matrix + Icebreaker calibers
