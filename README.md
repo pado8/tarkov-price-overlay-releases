@@ -261,6 +261,12 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 - **카카오페이** (한국)
 - **PayPal** — [paypal.me/tarkovoverlay](https://paypal.me/tarkovoverlay) (해외)
 
+### 💛 후원해주신 분들
+<!-- SUPPORTERS: 새 후원자는 아래 목록에 한 줄 추가 -->
+- 김*현
+
+여러분의 후원이 이 무료 프로젝트를 계속 만들게 합니다. 감사합니다!
+
 ---
 
 ## 📜 라이선스 / 면책
@@ -538,6 +544,12 @@ If this helps you, donations are appreciated. Two options in Settings → Donate
 
 - **KakaoPay** (Korea)
 - **PayPal** — [paypal.me/tarkovoverlay](https://paypal.me/tarkovoverlay) (international)
+
+### 💛 Supporters
+<!-- SUPPORTERS: add new names below -->
+- 김*현
+
+Your support keeps this free project going. Thank you!
 
 ---
 
