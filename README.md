@@ -1,3 +1,6 @@
+<p align="center">🇬🇧 <b><a href="#english">English</a></b> &nbsp;·&nbsp; 🇰🇷 <a href="#korean">한국어</a> &nbsp;·&nbsp; 🇷🇺 <a href="https://tarkov.aquapado.com/ru">Русский</a> &nbsp;|&nbsp; 🌐 <a href="https://tarkov.aquapado.com/en">Official site (EN)</a> / <a href="https://tarkov.aquapado.com">공식 사이트 (KO)</a></p>
+<a id="korean"></a>
+
 # Tarkov Price Overlay
 
 > **타르코프에서 마우스 올리고 F2** — 플리 시세 · 상인가 · 바터 · 제작 · 퀘스트 정보를 게임 위에 바로 띄워주는 **오픈소스 무료** Windows 오버레이 앱
@@ -8,7 +11,7 @@
 
 > 🌐 **공식 사이트: [tarkov.aquapado.com](https://tarkov.aquapado.com)** — 다운로드·사용법·자주 묻는 질문·[탈콥 가이드(카파템·열쇠·퀘스트)](https://tarkov.aquapado.com/guide/)·[서비스 상태](https://tarkov.aquapado.com/status/)는 공식 사이트에서 확인하세요.
 
-**[⬇ 최신 버전 다운로드](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)** · 한국어 / English
+**[⬇ 최신 버전 다운로드](https://github.com/pado8/tarkov-price-overlay-releases/releases/latest)** · 한국어 / [English](#english)
 
 > 🔓 **소스코드 공개**: [pado8/tarkov-price-overlay](https://github.com/pado8/tarkov-price-overlay) (MIT 라이선스)
 > ⚠️ **공식 다운로드는 이 페이지 한 곳뿐**입니다. 다른 곳의 다운로드 파일은 진위가 확인되지 않으니 주의하세요.
@@ -342,7 +345,7 @@ A. [GitHub Issues](https://github.com/pado8/tarkov-price-overlay-releases/issues
 
 Hover an inventory item, press F2 — card appears in about a second.
 
-![Main lookup card](assets/screenshots/01-main-lookup.png)
+![Main lookup card](assets/screenshots/en/01-main-lookup.png)
 
 Flea current/24h range/last trade · top trader price · barters (both directions) · hideout crafts · **quest requirements** all in one card. Weight efficiency (₽/kg) and per-slot price (₽/slot) auto-calculated.
 
@@ -445,13 +448,13 @@ Grab one from **[Releases](https://github.com/pado8/tarkov-price-overlay-release
 
 Want to recheck something you just looked up? Click 🕒 in the card header to see the last 15 lookups; click any entry to re-query.
 
-![History panel](assets/screenshots/02-history.png)
+![History panel](assets/screenshots/en/02-history.png)
 
 ### 3-1. Ammo compare matrix — auto-shown on weapons/rounds
 
 Press F2 on any weapon or ammunition round and the full set of rounds in that caliber pops up in a compact table. Sorted by penetration descending, current round highlighted.
 
-![Ammo matrix](assets/screenshots/04-ammo.png)
+![Ammo matrix](assets/screenshots/en/04-ammo.png)
 
 - **Pen**: Penetration Power — visualized as AC1-6 dots (● reliable / ◐ variable / ○ unlikely)
 - **Dmg**: Damage per shot (when penetrated)
@@ -461,7 +464,7 @@ Press F2 on any weapon or ammunition round and the full set of rounds in that ca
 
 The lookup card auto-shows which hideout stations require this item for their level upgrades.
 
-![Hideout upgrade requirements](assets/screenshots/05-hideout.png)
+![Hideout upgrade requirements](assets/screenshots/en/05-hideout.png)
 
 Each line shows station + level + required count (e.g. "Weapon rack Lv1 ×1"). Helps decide whether to stash or sell.
 
@@ -469,7 +472,7 @@ Each line shows station + level + required count (e.g. "Weapon rack Lv1 ×1"). H
 
 The card's quest panel auto-marks which quests you've already completed / are currently progressing by parsing EFT's game logs directly.
 
-![Quest tracker](assets/screenshots/06-quest.png)
+![Quest tracker](assets/screenshots/en/06-quest.png)
 
 - ✓ completed (grey) · ▶ in progress (gold) · not started (default) — three-tier color
 - No external API or token required — only reads local files
@@ -503,7 +506,7 @@ Drag any blank area of the card to reposition. Position is auto-saved.
 
 Click the gear (⚙) icon to open settings.
 
-![Settings panel](assets/screenshots/03-settings.png)
+![Settings panel](assets/screenshots/en/03-settings.png)
 
 | Setting | Description |
 |---|---|
